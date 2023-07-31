@@ -15,14 +15,11 @@
     "@line/liff": "^2.22.2",
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@preact/signals-react": "^1.3.3",
-    "@remotion/lottie": "^4.0.3",
-    "@remotion/player": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use": "^17.4.0"
   },
   "devDependencies": {
-    "@remotion/cli": "^4.0.3",
     "@types/node": "^20.3.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
