@@ -56,7 +56,7 @@ function App() {
     }
     liff
       .init({
-        liffId: "2000272909-4ZXxAvra",
+        liffId: location.search.split("?").at(-1) as string,
         withLoginOnExternalBrowser: true,
       })
       .then(() => {
@@ -272,6 +272,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
