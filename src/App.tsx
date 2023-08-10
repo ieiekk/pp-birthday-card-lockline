@@ -46,17 +46,29 @@ function App() {
   });
 
   useMount(() => {
+    liff.use(new CloseWindow());
     liff.use(new IsInClient());
     liff.use(new GetProfile());
-    liff.use(new CloseWindow());
+
+    const liffId = new URLSearchParams(location.search).get("id");
+
+    // Handle invalid liffId
+    if (!liffId) {
+      alert("Can't get liffId. Please check your endpoint url.");
+      liff.closeWindow();
+    }
+
+    // For local dev debug
     if (location.hostname === "localhost") {
       readySignal.value += 1;
       setIsTicketsMutated(true);
       return;
     }
+
+    // Main
     liff
       .init({
-        liffId: location.search.split("?").at(-1) as string,
+        liffId: liffId as string,
         withLoginOnExternalBrowser: true,
       })
       .then(() => {
